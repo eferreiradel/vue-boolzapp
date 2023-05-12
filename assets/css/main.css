@@ -5,7 +5,7 @@ body {
 }
 * {
   box-sizing: border-box;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 #app {
@@ -32,7 +32,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 .aside__searchBar {
   height: 3rem;
   background-color: var(--appColor--background);

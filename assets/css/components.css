@@ -3,7 +3,7 @@
 :root {
   --appColor--background: rgb(234, 234, 234);
   --appColor--white: whitesmoke;
-  --appColor--icon: red;
+  --appColor--icon: rgb(167, 167, 167);
   --appColor--alert: rgb(132, 208, 213);
 }
 
@@ -17,12 +17,13 @@
   display: flex;
   align-items: center;
 }
-.img__container {
-}
 
 /* icons */
 .aside__alert i {
   color: var(--appColor--alert);
+}
+i {
+  color: var(--appColor--icon);
 }
 .component--circle {
   display: flex;
@@ -34,15 +35,16 @@
   height: 100%;
 }
 .form-control {
+  height: 100%;
 }
-.aside__searchBar button {
+/* .aside__searchBar button {
   padding: 0em 1em;
   border: 0;
   border-top-left-radius: 0.4em;
   border-bottom-left-radius: 0.4em;
-}
-.aside__searchBar input {
+} */
+/* .aside__searchBar input {
   border: none;
   border-top-right-radius: 0.4em;
   border-bottom-right-radius: 0.4em;
-}
+} */
