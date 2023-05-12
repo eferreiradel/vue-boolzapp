@@ -53,11 +53,15 @@ body {
   align-items: center;
 }
 .main__chatSection {
-  background-color: rgb(104, 44, 44);
+  background-color: var(--appColor--mainBackground);
   overflow-y: scroll;
   height: calc(90vh - 6rem);
 }
 .main__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
   background-color: var(--appColor--background);
   border-left: 1px solid rgb(206, 206, 206);
 }

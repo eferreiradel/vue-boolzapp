@@ -5,6 +5,7 @@
   --appColor--white: whitesmoke;
   --appColor--icon: rgb(167, 167, 167);
   --appColor--alert: rgb(132, 208, 213);
+  --appColor--mainBackground: rgb(255, 255, 255);
 }
 
 .userProfile {
