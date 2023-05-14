@@ -1,13 +1,14 @@
 /* CSS COMPONENTS */
 
 :root {
-  --appColor--background: rgb(234, 234, 234);
+  --appColor--background: rgb(226, 234, 255);
   --appColor--white: whitesmoke;
-  --appColor--icon: rgb(167, 167, 167);
-  --appColor--alert: rgb(132, 208, 213);
+  --appColor--icon: rgb(58, 133, 225);
+  --appColor--alert: rgb(132, 148, 213);
   --appColor--mainBackground: rgb(255, 255, 255);
+  --appColor--contactItem: rgba(255, 255, 255, 0.666);
 
-  --chatColor--sent: rgb(132, 208, 213);
+  --chatColor--sent: rgb(90, 94, 208);
   --chatColor--retrieve: rgb(80, 240, 216);
 }
 /* user profile */
@@ -66,8 +67,10 @@ i {
   display: block;
   float: right;
   border-radius: 1em;
+  border-bottom-right-radius: 0;
   padding: 0.5em 1em;
   background-color: var(--chatColor--sent);
+  color: white;
 }
 .chat--retrieve {
   max-width: 60%;

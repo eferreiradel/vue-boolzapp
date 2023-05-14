@@ -64,7 +64,7 @@
                         <div class="aside__userList">
                             <div class="list--item" v-for="contact in contacts">
                                 <div class="item__container gap-2">
-                                    <img :src="contact.contact__photo" class="component--circle" alt="">
+                                    <img :src="contact.contact__photo" class="component--circle" :id="contact.id" @click="debug">
                                     <span>{{contact. name}}</span>
                                 </div>
                             </div>                        
@@ -74,8 +74,8 @@
                         <!-- main__header -->
                         <div class="container main__header p-2">
                             <div class="item__container gap-2">
-                                <img src="./img/avatar_1.jpg" class="component--circle" alt="">
-                                <span>Giuseppe</span>
+                                <img :src="chat__active__photo" v-show="chat__active__photo" class="component--circle" alt="">
+                                <span>{{chat__active}}</span>
                             </div>
                             <!-- main__header / component--right -->
                             <div class="item__container gap-1 p-2">
@@ -91,7 +91,6 @@
                                     {{key}}
                                 </div>
                             </div>
-                            
                         </div>
                         <!-- main__footer -->
                         <div class="container main__footer p-2 gap-2">

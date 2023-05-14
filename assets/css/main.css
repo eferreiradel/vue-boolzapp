@@ -1,7 +1,8 @@
 /* CSS LAYOUT */
 
 body {
-  background-color: rgb(58, 58, 58);
+  height: 100vh;
+  background: linear-gradient(to top, #9791d3 70%, #645393 30%);
 }
 * {
   box-sizing: border-box;
@@ -12,7 +13,7 @@ body {
   border-radius: 1em;
   position: relative;
   display: flex;
-  height: 90vh;
+  height: 50vh;
 }
 .aside {
 }
@@ -43,7 +44,7 @@ body {
 
 .aside__userList {
   border-bottom-left-radius: 1em;
-  height: calc(90vh - 9rem);
+  height: calc(70vh - 9rem);
   background-color: var(--appColor--background);
   overflow-y: auto;
 }
@@ -52,7 +53,7 @@ body {
   width: 100%;
   margin: 0.3em 0em;
   padding: 0.3em;
-  background-color: rgba(201, 201, 201, 0.341);
+  background-color: var(--appColor--contactItem);
 }
 
 /* main */
@@ -71,7 +72,7 @@ body {
   align-items: start;
   background-color: var(--appColor--mainBackground);
   overflow-y: auto;
-  height: calc(90vh - 6rem);
+  height: calc(70vh - 6rem);
 }
 .main__footer {
   border-bottom-right-radius: 1em;
@@ -80,5 +81,4 @@ body {
   justify-content: space-between;
   height: 3rem;
   background-color: var(--appColor--background);
-  border-left: 1px solid rgb(206, 206, 206);
 }
