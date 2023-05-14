@@ -20,6 +20,8 @@
     <!-- css/components -->
     <link rel="stylesheet" href="./assets/css/components.css" />
   </head>
+  <!-- HEADER -->
+<!--  -->
   <body>
     <div class="container-fluid">
       <div class="row justify-content-center py-4">
@@ -27,18 +29,22 @@
         <div class="col-11 col-md-9 col-lg-7 p-0 shadow" id="app">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- aside -->
                     <div class="col-5 aside p-0">
+                        <!-- ....aside__header.... -->
                         <div class="aside__header p-2">
                             <div class="item__container gap-2">
                                 <img src="./img/avatar_1.jpg" class="component--circle" alt="">
-                                <span>Giuseppe</span>
+                                <span>Utente</span>
                             </div>
                             <div class="item__container gap-1">
-                                <i class="fa-solid fa-house"></i>
+                                <i class="fa-solid fa-house"
+                                ></i>
                                 <i class="fa-solid fa-rotate-right"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
+                        <!-- ....aside__alert.... -->
                         <div class="aside__alert p-2">
                             <div class="item__container gap-2">
                                 <div class="component--circle">
@@ -47,13 +53,22 @@
                                 <span>Notifiche</span>
                             </div>
                         </div>
+                        <!-- ....aside__searchBar.... -->
                         <div class="aside__searchBar">
                             <div class="item__container p-2 gap-1">
                                 <button class="btn btn-light component--circle"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="aside__list p-2"> list</div>
+                        <!-- ....aside__userList -->
+                        <div class="aside__userList">
+                            <div class="list--item" v-for="contact in contacts">
+                                <div class="item__container gap-2">
+                                    <img :src="contact.contact__photo" class="component--circle" alt="">
+                                    <span>{{contact. name}}</span>
+                                </div>
+                            </div>                        
+                        </div>
                     </div>
                     <div class="col-7 p-0 main">
                         <!-- main__header -->
@@ -62,26 +77,38 @@
                                 <img src="./img/avatar_1.jpg" class="component--circle" alt="">
                                 <span>Giuseppe</span>
                             </div>
-                            <!-- main component--right -->
-                            <div class="item__container gap-1">
+                            <!-- main__header / component--right -->
+                            <div class="item__container gap-1 p-2">
                                 <i class="fa-solid fa-search"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div class="container main__chatSection"></div>
+                        <!-- main / main__chatSection -->
+                        <div class="container main__chatSection">
+                            <div class="chatContainer--sent" v-for="message in message__history">
+                                <div class="chat--sent" v-for="(key, value) in message">
+                                    {{key}}
+                                </div>
+                            </div>
+                            
+                        </div>
                         <!-- main__footer -->
                         <div class="container main__footer p-2 gap-2">
+                            <!-- main__footer / component--left -->
                             <div class="item__container">
                                 <i class="fa-solid fa-face-smile"></i>
                             </div>
+                            <!-- main__footer / component--center -->
                             <div class="item__container">
-                                <input type="text" class="form-control">
+                                <input type="text-area" class="form-control" v-model="message__commit" @keyup.enter="sendMsg">
                             </div>
-                            <div class="item__container">
-                                <i class="fa-solid fa-microphone"></i>
+                            <!-- main__footer / component--right -->
+                            <div class="item__container p-2">
+                                <i class="fa-solid fa-paper-plane" @click="sendMsg()"></i>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -89,6 +116,6 @@
     <!-- script -->
     <script src="https://kit.fontawesome.com/52ae8a07c2.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./assets/main.js"></script>
   </body>
 </html>

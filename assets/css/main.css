@@ -9,17 +9,19 @@ body {
 }
 
 #app {
+  border-radius: 1em;
   position: relative;
   display: flex;
   height: 90vh;
 }
 .aside {
-  background-color: aqua;
 }
 .main {
-  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
 }
 .aside__header {
+  border-top-left-radius: 1em;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -39,12 +41,23 @@ body {
   align-items: center;
 }
 
-.aside__list {
+.aside__userList {
+  border-bottom-left-radius: 1em;
   height: calc(90vh - 9rem);
   background-color: var(--appColor--background);
   overflow-y: auto;
 }
+.list--item {
+  height: 3rem;
+  width: 100%;
+  margin: 0.3em 0em;
+  padding: 0.3em;
+  background-color: rgba(201, 201, 201, 0.341);
+}
+
+/* main */
 .main__header {
+  border-top-right-radius: 1em;
   height: 3rem;
   border-left: 1px solid rgb(206, 206, 206);
   background-color: var(--appColor--background);
@@ -53,11 +66,15 @@ body {
   align-items: center;
 }
 .main__chatSection {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   background-color: var(--appColor--mainBackground);
-  overflow-y: scroll;
+  overflow-y: auto;
   height: calc(90vh - 6rem);
 }
 .main__footer {
+  border-bottom-right-radius: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;

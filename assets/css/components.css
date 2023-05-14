@@ -6,8 +6,11 @@
   --appColor--icon: rgb(167, 167, 167);
   --appColor--alert: rgb(132, 208, 213);
   --appColor--mainBackground: rgb(255, 255, 255);
-}
 
+  --chatColor--sent: rgb(132, 208, 213);
+  --chatColor--retrieve: rgb(80, 240, 216);
+}
+/* user profile */
 .userProfile {
   display: flex;
   align-items: center;
@@ -17,6 +20,10 @@
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.debug {
+  background-color: red;
 }
 
 /* icons */
@@ -38,14 +45,39 @@ i {
 .form-control {
   height: 100%;
 }
-/* .aside__searchBar button {
-  padding: 0em 1em;
-  border: 0;
-  border-top-left-radius: 0.4em;
-  border-bottom-left-radius: 0.4em;
-} */
-/* .aside__searchBar input {
-  border: none;
-  border-top-right-radius: 0.4em;
-  border-bottom-right-radius: 0.4em;
-} */
+
+/* chat omponents */
+.chatContainer--sent {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.chatContainer--retrieve {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.chat--sent {
+  max-width: 60%;
+  margin: 1em;
+
+  word-wrap: break-word;
+
+  display: block;
+  float: right;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background-color: var(--chatColor--sent);
+}
+.chat--retrieve {
+  max-width: 60%;
+  margin: 1em;
+
+  word-wrap: break-word;
+
+  display: block;
+  float: right;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background-color: var(--chatColor--retrieve);
+}
