@@ -21,13 +21,22 @@
     <link rel="stylesheet" href="./assets/css/components.css" />
   </head>
   <!-- HEADER -->
+
+
 <!--  -->
   <body>
     <div class="container-fluid">
       <div class="row justify-content-center py-4">
+
         <!-- #app -->
-        <div class="col-11 col-md-9 col-lg-7 p-0 shadow" id="app">
+
+        <div class="col-11 col-md-9 col-lg-7 p-0 d-flex flex-column" id="app">
             <div class="container-fluid">
+                <h1 class="text-white">
+                    BoolZap
+                </h1>
+            </div>
+            <div class="container-fluid shadow">
                 <div class="row">
                     <!-- aside -->
                     <div class="col-5 aside p-0">
@@ -62,9 +71,9 @@
                         </div>
                         <!-- ....aside__userList -->
                         <div class="aside__userList">
-                            <div class="list--item" v-for="contact in contacts">
-                                <div class="item__container gap-2">
-                                    <img :src="contact.contact__photo" class="component--circle" :id="contact.id" @click="debug">
+                            <div class="list--item" v-for="(contact, i) in contacts">
+                                <div class="item__container gap-2" :id="contact.id" @click="returnIndex">
+                                    <img :src="contact.contact__photo" class="component--circle">
                                     <span>{{contact. name}}</span>
                                 </div>
                             </div>                        
@@ -83,10 +92,11 @@
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
+
                         </div>
                         <!-- main / main__chatSection -->
                         <div class="container main__chatSection">
-                            <div class="chatContainer--sent" v-for="message in message__history">
+                            <div class="chatContainer--sent" v-for="(message, i) in contacts[active__element].messages">
                                 <div class="chat--sent" v-for="(key, value) in message">
                                     {{key}}
                                 </div>
@@ -104,7 +114,7 @@
                             </div>
                             <!-- main__footer / component--right -->
                             <div class="item__container p-2">
-                                <i class="fa-solid fa-paper-plane" @click="sendMsg()"></i>
+                                <i class="fa-solid fa-paper-plane" @click="sendMsg()" @click="contacts[index]"></i>
                             </div>
                         </div>
                     </div>
@@ -112,6 +122,8 @@
                 </div>
             </div>
         </div>  
+
+
     <!-- script -->
     <script src="https://kit.fontawesome.com/52ae8a07c2.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
