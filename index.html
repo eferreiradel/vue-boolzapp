@@ -63,16 +63,15 @@
                             </div>
                         </div>
                         <!-- ....aside__searchBar.... -->
-                        <div class="aside__searchBar">
-                            <div class="item__container p-2 gap-1">
-                                <button class="btn btn-light component--circle"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                <input type="text" class="form-control">
+                        <div class="aside__searchBar d-flex">
+                            <div class="item__container p-2 w-100">
+                                <input type="text" class="form-control" v-model="searchBox" placeholder="search contact...">
                             </div>
                         </div>
                         <!-- ....aside__userList -->
                         <div class="aside__userList">
-                            <div class="list--item" v-for="(contact, i) in contacts">
-                                <div class="item__container gap-2" :id="contact.id" @click="returnIndex">
+                            <div class="list--item" v-for="(contact, i) in filteredList">
+                                <div class="item__container gap-2" @mouseover="highLightItem" :id="contact.id" @click="returnIndex">
                                     <img :src="contact.contact__photo" class="component--circle">
                                     <span>{{contact. name}}</span>
                                 </div>

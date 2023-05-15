@@ -3,6 +3,18 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      // style bind
+      hover: "item__container--hover",
+      searchBox: "",
+      // chatt
+      message__commit: "",
+      message__push: "",
+      //active chatt
+      chat__active: "",
+      chat__active__photo: "",
+      //CSS Classes
+      d_none: "",
+
       active__element: 0,
       contacts: [
         {
@@ -23,16 +35,21 @@ createApp({
           contact__photo: "./img/avatar_3.jpg",
           messages: [],
         },
+        {
+          id: 3,
+          name: "Bruno",
+          contact__photo: "./img/avatar_4.jpg",
+          messages: [],
+        },
       ],
-      // chatt
-      message__commit: "",
-      message__push: "",
-      //active chatt
-      chat__active: "",
-      chat__active__photo: "",
     };
   },
   methods: {
+    highLightItem(event) {
+      console.log("hight");
+      event.target.classList.add = "item__container--hover";
+      console.log(event.target);
+    },
     returnIndex(event, i) {
       index = event.target.id;
       this.active__element = index;
@@ -45,7 +62,18 @@ createApp({
       this.contacts[this.active__element].messages.push({
         content: this.message__push,
       });
+      this.message__commit = null;
       console.log(this.message__push);
+    },
+  },
+  computed: {
+    filteredList() {
+      return this.contacts.filter((contacts) => {
+        return (
+          contacts.name.toLowerCase().indexOf(this.searchBox.toLowerCase()) !=
+          -1
+        );
+      });
     },
   },
 }).mount("#app");

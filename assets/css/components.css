@@ -22,9 +22,16 @@
   display: flex;
   align-items: center;
 }
-
+.item__container--hover {
+  background-color: red;
+  scale: 1.2;
+}
 .debug {
   background-color: red;
+}
+
+.item__container input::placeholder {
+  color: rgb(174, 174, 174);
 }
 
 /* icons */
