@@ -29,6 +29,7 @@ body {
   justify-content: space-between;
   background-color: var(--appColor--background);
 }
+
 .aside__alert {
   height: 3rem;
   background-color: var(--appColor--alert);
@@ -81,4 +82,9 @@ body {
   justify-content: space-between;
   height: 3rem;
   background-color: var(--appColor--background);
+}
+select {
+}
+select::-ms-expand {
+  display: none;
 }
