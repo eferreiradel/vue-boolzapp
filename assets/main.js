@@ -25,6 +25,7 @@ createApp({
           name: "John",
           contact__photo: "./img/avatar_1.jpg",
           messages: [],
+          botMessages: [],
           trashMessages: [],
         },
         {
@@ -32,6 +33,7 @@ createApp({
           name: "Albert",
           contact__photo: "./img/avatar_2.jpg",
           messages: [],
+          botMessages: [],
           trashMessages: [],
         },
         {
@@ -39,6 +41,7 @@ createApp({
           name: "Kokori",
           contact__photo: "./img/avatar_3.jpg",
           messages: [],
+          botMessages: [],
           trashMessages: [],
         },
         {
@@ -46,6 +49,7 @@ createApp({
           name: "Bruno",
           contact__photo: "./img/avatar_4.jpg",
           messages: [],
+          botMessages: [],
           trashMessages: [],
         },
       ],
@@ -75,19 +79,19 @@ createApp({
 
       this.message__commit = null;
     },
-    deleteMsg(event) {
+    deleteMsg() {
       const trash = this.contacts[this.active__element].messages.pop();
       this.contacts[this.active__element].trashMessages.push(trash);
       console.log(this.contacts[this.active__element].trashMessages);
     },
-    display__deletedMsg(event) {
+    display__deletedMsg() {
       this.trashSection = true;
       this.chatSection = false;
 
       let trash = this.contacts[this.active__element].trashMessages;
       console.log(trash);
     },
-    display__chatSection(event) {
+    display__chatSection() {
       this.trashSection = false;
       this.chatSection = true;
     },
@@ -102,5 +106,4 @@ createApp({
       });
     },
   },
-  watch: {},
 }).mount("#app");
