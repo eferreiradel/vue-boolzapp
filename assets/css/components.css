@@ -102,3 +102,9 @@ i {
   padding: 0.5em 1em;
   background-color: var(--chatColor--retrieve);
 }
+.main__footer .item__container {
+  width: 90%;
+}
+.main__footer .item__container:nth-child(2) {
+  width: 10%;
+}

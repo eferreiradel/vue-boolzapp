@@ -83,8 +83,7 @@ body {
   height: 3rem;
   background-color: var(--appColor--background);
 }
-select {
-}
+
 select::-ms-expand {
   display: none;
 }
